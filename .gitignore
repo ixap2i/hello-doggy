@@ -2,5 +2,5 @@ Cargo.lock
 src/.DS_Store
 .DS_Store
 .env
-www/node_modules
+record-memo/www/node_modules
 ./target/
