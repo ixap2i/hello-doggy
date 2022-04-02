@@ -1,0 +1,6 @@
+Cargo.lock
+src/.DS_Store
+.DS_Store
+.env
+www/node_modules
+./target/
