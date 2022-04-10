@@ -2,6 +2,7 @@ Cargo.lock
 src/.DS_Store
 .DS_Store
 .env
-/www/node_modules/*
 target/
 .devcontainer/*
+/www/node_modules/*
+/www/package-lock.json
