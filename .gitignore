@@ -4,3 +4,4 @@ src/.DS_Store
 .env
 record-memo/www/node_modules
 target/
+.devcontainer/*
