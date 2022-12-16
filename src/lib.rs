@@ -1,12 +1,17 @@
 mod utils;
-use wasm_bindgen::prelude::*;
+mod dog;
+
+use crate::dog::Dog;
+
 use serde::{Deserialize, Serialize};
-use wasm_bindgen::JsCast;
-use wasm_bindgen_futures::JsFuture;
-use web_sys::{Request, RequestInit, RequestMode, Response};
 use std::fmt::{self, Debug};
 use std::error;
 use std::error::Error;
+
+use wasm_bindgen::prelude::*;
+use wasm_bindgen::JsCast;
+use wasm_bindgen_futures::JsFuture;
+use web_sys::{Request, RequestInit, RequestMode, Response};
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
 // allocator.
@@ -19,33 +24,14 @@ extern {
     fn alert(s: &str);
 }
 
-#[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, record-memo!");
-}
-
 #[derive(Serialize, Deserialize, Debug)]
-pub struct Dog {
-    pub message: String,
-    pub status: String,
+pub struct JsonVal {
+    pub data: String,
 }
-
-impl fmt::Display for Dog {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "json response has error")
-    }
-}
-
-impl error::Error for Dog {
-    fn source(&self) -> Option<&(dyn Error + 'static)> {
-        None
-    }
-}
-
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct PsqlArr {
-    pub data: JsonValue::Array
+    pub datas: Vec<JsonVal>
 }
 
 impl fmt::Display for PsqlArr {
@@ -87,7 +73,7 @@ pub async fn run() -> Result<JsValue, JsValue> {
 }
 
 #[wasm_bindgen]
-pub async fn get_psql_data() -> Result<JsValue, JsValue> {
+pub async fn get_a_dog_data() -> Result<JsValue, JsValue> {
     let mut opts = RequestInit::new();
     opts.method("GET");
     opts.mode(RequestMode::Cors);
