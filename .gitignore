@@ -5,3 +5,4 @@ src/.DS_Store
 target/
 /www/node_modules/*
 /www/package-lock.json
+.devcontainer/*
