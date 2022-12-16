@@ -3,6 +3,5 @@ src/.DS_Store
 .DS_Store
 .env
 target/
-.devcontainer/*
 /www/node_modules/*
 /www/package-lock.json
