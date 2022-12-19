@@ -1,5 +1,5 @@
 import React from "react";
-import * as wasm from "record-memo";
+import * as wasm from "hello-doggy";
 
 const App = () => {
   type Dog = {

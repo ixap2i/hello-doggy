@@ -1,4 +1,4 @@
-import * as wasm from "record-memo";
+import * as wasm from "hello-doggy";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
