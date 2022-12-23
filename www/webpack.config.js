@@ -19,7 +19,9 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js"]
   },
   devServer: {
-    contentBase: path.resolve(__dirname, "public")
+    contentBase: path.resolve(__dirname, "public"),
+    port: 8080,
+    host: '0.0.0.0',
   },
   plugins: [
     new htmlWebpackPlugin({ template: './src/index.html' }),
