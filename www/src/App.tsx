@@ -24,14 +24,16 @@ const App = () => {
 
   const dogImgUrl = localStorage.imageUrl;
 
-  function DogImg() {
+  function MainImg() {
     return <img src={dogImgUrl}></img>
   }
   return (
-    <div>
-      <div>wasm-react-test</div>
-      <DogImg></DogImg>
-    </div>
+    <main>
+      <span>hello doggy !!</span>
+      <div>
+        <MainImg />
+      </div>
+    </main>
   );
 };
 
