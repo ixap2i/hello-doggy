@@ -22,6 +22,7 @@ module.exports = {
     contentBase: path.resolve(__dirname, "public"),
     port: 8080,
     host: '0.0.0.0',
+    disableHostCheck: true
   },
   plugins: [
     new htmlWebpackPlugin({ template: './src/index.html' }),
