@@ -1,6 +1,6 @@
 import React from "react";
 import * as wasm from "hello-doggy";
-import Dog from "./types/DogImage";
+import Dog from "../types/Dog";
 
 class DogImage extends React.Component<{}, {srcUrl: string}> {
   constructor(props: any) {
