@@ -1,4 +1,3 @@
-mod utils;
 mod dog;
 
 use crate::dog::Dog;
@@ -66,10 +65,8 @@ pub async fn run() -> Result<JsValue, JsValue> {
     // Convert this other `Promise` into a rust `Future`.
     let json = JsFuture::from(resp.json()?).await?;
 
-    // Use serde to parse the JSON into a struct.
-    let branch_info: Dog = json.into_serde().unwrap();
-
-    Ok(JsValue::from_serde(&branch_info).unwrap())
+    let dog_image: Dog = serde_wasm_bindgen::from_value(json)?;
+    Ok(serde_wasm_bindgen::to_value(&dog_image)?)
 }
 
 #[wasm_bindgen]
@@ -92,8 +89,6 @@ pub async fn get_a_dog_data() -> Result<JsValue, JsValue> {
     // Convert this other `Promise` into a rust `Future`.
     let json = JsFuture::from(resp.json()?).await?;
 
-    // Use serde to parse the JSON into a struct.
-    let branch_info: Dog = json.into_serde().unwrap();
-
-    Ok(JsValue::from_serde(&branch_info).unwrap())
+    let dog_image: Dog = serde_wasm_bindgen::from_value(json)?;
+    Ok(serde_wasm_bindgen::to_value(&dog_image)?)
 }
