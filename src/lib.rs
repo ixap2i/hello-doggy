@@ -21,8 +21,6 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 #[wasm_bindgen]
 extern {
     fn alert(s: &str);
-    #[wasm_bindgen(catch)]
-    async fn run() -> Result<JsValue, JsValue>;
 }
 
 #[derive(Serialize, Deserialize, Debug)]
