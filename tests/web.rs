@@ -78,7 +78,7 @@ macro_rules! console_log {
 #[wasm_bindgen_test(async)]
 async fn test() {
     let f_to_p = future_to_promise(get_a_dog_data());
-    let p_exec = js_sys::Promise::resolve(&result);
+    let p_exec = js_sys::Promise::resolve(&f_to_p);
 
     let f_to_p2 = future_to_promise(get_a_dog_data());
 
